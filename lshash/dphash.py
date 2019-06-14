@@ -21,7 +21,7 @@ class DPHash(object):
             self.hash_table.append(np.argsort(data_array))
 
     def query(self, query_point, num_results):
-        assert self.cur_index and len(query_point) == len(self.index_list[0])
+        assert len(query_point) == len(self.hash_table) and len(query_point) == len(self.index_list[0])
         ids_set = set()
         sub_dot_list = []
         for i in range(len(query_point)):
