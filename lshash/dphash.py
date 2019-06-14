@@ -17,7 +17,7 @@ class DPHash(object):
         for i in range(len(self.index_list[0])):
             data_array = np.empty(len(self.index_list))
             for j in range(len(self.index_list)):
-                data_array[j] = self.index_list[i][j]
+                data_array[j] = self.index_list[j][i]
             self.hash_table.append(np.argsort(data_array))
 
     def query(self, query_point, num_results):
